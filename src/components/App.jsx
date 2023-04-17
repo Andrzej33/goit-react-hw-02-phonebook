@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { nanoid } from 'nanoid'
 
 // import { ProfileCard } from './Profile/Profile';
 // import user from '../user.json';
@@ -24,14 +25,24 @@ export class App extends Component {
     filter: '',
   };
 
-  formSubmit = data => {
-    console.log(data);
+  // addContacts = text =>{}
+
+  addContact = ({name,number}) => {
+const contact ={
+  id: nanoid(),
+  name,
+  number,
+}
+
+    this.setState(({contacts}) => ({
+      contacts:[...contacts,contact]
+    }))
   };
 
   render() {
     return (
       <Layout>
-        <ContactForm onSubmit={this.formSubmit} />
+        <ContactForm onSubmit={this.addContact} />
         {/* <div>
   <h1>Phonebook</h1>
   <ContactForm ... />

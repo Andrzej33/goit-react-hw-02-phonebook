@@ -1,6 +1,11 @@
 import { Component } from 'react';
+import { nanoid } from 'nanoid'
 
 export class ContactForm extends Component {
+
+  nameId = nanoid();
+  numberId = nanoid();
+
   state = {
     name: '',
     number: '',
@@ -31,8 +36,8 @@ export class ContactForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="">
-          Name
+        <label htmlFor={this.nameId}>
+          Name </label>
           <input
             type="text"
             name="name"
@@ -41,17 +46,19 @@ export class ContactForm extends Component {
             required
             value={this.state.name}
             onChange={this.handleChange}
+            id={this.nameId}
           />
-        </label>
-        <label htmlFor="">
-          Number{' '}
+        
+        <label htmlFor={this.numberId}>
+          Number</label>
           <input
             type="text"
             name="number"
             value={this.state.number}
             onChange={this.handleChange}
+            id={this.numberId}
           />
-        </label>
+        
         <button type="submit">Add contact</button>
       </form>
     );
