@@ -52,11 +52,14 @@ export class ContactForm extends Component {
         <label htmlFor={this.numberId}>
           Number</label>
           <input
-            type="text"
-            name="number"
-            value={this.state.number}
-            onChange={this.handleChange}
-            id={this.numberId}
+          type="tel"
+          name="number"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required
+          value={this.state.number}
+          onChange={this.handleChange}
+          id={this.numberId}
           />
         
         <button type="submit">Add contact</button>
