@@ -1,14 +1,5 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid'
-
-// import { ProfileCard } from './Profile/Profile';
-// import user from '../user.json';
-// import friends from '../friends.json';
-// import data from '../data.json';
-// import transactions from '../transactions.json';
-// import { Statsics } from './Statstics/Statstics';
-// import { FriendList } from './FriendList/FriendList';
-// import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
 import { ContactForm } from './PhoneBook/ContactForm';
@@ -27,7 +18,7 @@ export class App extends Component {
     filter: '',
   };
 
-  // addContacts = text =>{}
+ 
 
   addContact = ({name,number}) => {
 
@@ -35,11 +26,6 @@ export class App extends Component {
       this.state.contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
     )
 
-    // if(this.setState((prevState) => {
-    //   prevState.contacts.find(contact => contact.name === name);
-    //   console.log(name);
-    //   // console.log(contact);
-    // }))
     
     {
       alert(`${name} is already in contacts`);
@@ -76,7 +62,6 @@ export class App extends Component {
   }
 
   deleteContact = (contactId) => {
-    console.log(contactId);
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact=> contact.id !== contactId)
     }))
@@ -94,20 +79,11 @@ const filteredContacts = this.getFilteredContacts()
         <Filter value={filter} onChange={this.changeFilter}/>
         <ContactList contacts={filteredContacts}
         onDeleteContact={this.deleteContact}/>
-        {/* <div>
-  <h1>Phonebook</h1>
-  <ContactForm ... />
-
-  <h2>Contacts</h2>
-  <Filter ... />
-  <ContactList ... />
-</div> */}
-        {/* <ProfileCard description={user} />
-      <Statsics title="Upload stats" stats={data} />
-      <FriendList friends={friends} />
-      <TransactionHistory transactions={transactions} /> */}
         <GlobalStyle />
       </Layout>
     );
   }
 }
+
+
+
