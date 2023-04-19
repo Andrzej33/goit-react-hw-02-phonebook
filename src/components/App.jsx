@@ -2,10 +2,10 @@ import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
-import { ContactForm } from './PhoneBook/ContactForm';
-import { ContactList } from './PhoneBook/ContactList';
-import { Filter } from './PhoneBook/Filter';
-import { Title } from './PhoneBook/Title.styled';
+import { ContactForm } from './ContactForm/ContactForm';
+import { ContactList } from './ContactList/ContactList';
+import { Filter } from './Filter/Filter';
+import { Title } from './Title/Title.styled';
 
 export class App extends Component {
   state = {
